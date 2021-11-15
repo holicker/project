@@ -6,9 +6,12 @@ services:
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
-    volumes:
-      - D:/projects/images:/images
 
+  front:
+    build: front
+    mem_limit: 350m
+    ports:
+      - "80:80"
 
   chat:
     build: chat
@@ -24,7 +27,6 @@ services:
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
-
 
   review:
     build: review
@@ -48,7 +50,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
-      - "8443:8443"
+      - "8080:8080"
 
   auth:
     build: auth
