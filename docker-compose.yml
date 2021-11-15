@@ -4,18 +4,21 @@ services:
   vendor:
     build: vendor
     mem_limit: 350m
+    dockerfile: DockerFile
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   front:
     build: front
     mem_limit: 350m
+    dockerfile: DockerFile
     ports:
       - "80:80"
 
   chat:
     build: chat
     mem_limit: 350m
+    dockerfile: DockerFile
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     depends_on:
@@ -25,28 +28,33 @@ services:
   qna:
     build: qna
     mem_limit: 350m
+    dockerfile: DockerFile
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   review:
     build: review
     mem_limit: 350m
+    dockerfile: DockerFile
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   notice:
     build: notice
     mem_limit: 350m
+    dockerfile: DockerFile
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
   eureka:
     build: eureka
+    dockerfile: DockerFile
     mem_limit: 350m
 
   gateway:
     build: gateway
     mem_limit: 350m
+    dockerfile: DockerFile
     environment:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
@@ -55,6 +63,7 @@ services:
   auth:
     build: auth
     mem_limit: 350m
+    dockerfile: DockerFile
     environment:
       - SPRING_PROFILES_ACTIVE=docker
 
