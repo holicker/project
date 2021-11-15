@@ -1,6 +1,14 @@
 version: '2.1'
 
 services:
+  auth:
+    build:
+      context: auth
+      dockerfile: Dockerfile
+    mem_limit: 350m
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
   vendor:
     build:
       context: vendor
@@ -67,14 +75,6 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     ports:
       - "8080:8080"
-
-  auth:
-    build:
-      context: auth
-      dockerfile: Dockerfile
-    mem_limit: 350m
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
 
   kafka:
     image: wurstmeister/kafka:2.12-2.1.0
