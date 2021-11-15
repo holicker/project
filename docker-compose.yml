@@ -4,7 +4,7 @@ services:
   vendor:
     build:
       context: vendor
-      dockerfile: app/step1/testproject/vendor/Dockerfile
+      dockerfile: /app/step1/testproject/vendor/Dockerfile
     mem_limit: 350m
     environment:
       - SPRING_PROFILES_ACTIVE=docker
