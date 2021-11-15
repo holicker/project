@@ -3,7 +3,6 @@ version: '2.1'
 services:
   vendor:
     build: vendor
-      context: .
       dockerfile: Dockerfile
     mem_limit: 350m
     environment:
@@ -11,7 +10,6 @@ services:
 
   front:
     build: front
-      context: .
       dockerfile: Dockerfile
     mem_limit: 350m
     ports:
@@ -19,7 +17,6 @@ services:
 
   chat:
     build: chat
-      context: .
       dockerfile: Dockerfile
     mem_limit: 350m
     environment:
@@ -30,7 +27,6 @@ services:
 
   qna:
     build: qna
-      context: .
       dockerfile: Dockerfile
     mem_limit: 350m
     environment:
@@ -38,7 +34,6 @@ services:
 
   review:
     build: review
-      context: .
       dockerfile: Dockerfile
     mem_limit: 350m
     environment:
@@ -46,7 +41,6 @@ services:
 
   notice:
     build: notice
-      context: .
       dockerfile: Dockerfile
     mem_limit: 350m
     environment:
@@ -54,13 +48,11 @@ services:
 
   eureka:
     build: eureka
-      context: .
       dockerfile: Dockerfile
     mem_limit: 350m
 
   gateway:
     build: gateway
-      context: .
       dockerfile: Dockerfile
     mem_limit: 350m
     environment:
@@ -70,7 +62,6 @@ services:
 
   auth:
     build: auth
-      context: .
       dockerfile: Dockerfile
     mem_limit: 350m
     environment:
